@@ -1,0 +1,21 @@
+.ui__icon {
+  display: inline-block;
+  content: "";
+  width: 10px;
+  height: 7px;
+  position: absolute;
+  top: 43%;
+  right: 19%;
+}
+
+.header__logo--icon {
+  height: 100%;
+  width: 185px;
+}
+
+.search__icon {
+  width: 18px;
+  height: 18px;
+  z-index: 10;
+}
+

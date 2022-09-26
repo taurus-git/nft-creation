@@ -1,0 +1,35 @@
+.menu {
+  display: none;
+  position: absolute;
+  width: max-content;
+  box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.25);;
+  z-index: 1;
+  background-color: #ffffff;
+  border-radius: 5px;
+
+  &__list {
+    list-style: none;
+
+    & li:hover {
+      background-color: rgba(248, 248, 248);
+      border-radius: 5px;
+    }
+
+    & a {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      color: var(--color-text-primary);
+      padding: 10px 10px;
+    }
+  }
+}
+
+.menu__dropdown {
+  position: relative;
+  display: inline-block;
+
+  &:hover .menu{
+    display: block;
+  }
+}

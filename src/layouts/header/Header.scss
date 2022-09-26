@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  min-height: 112px;
+  padding: 29px 41px;
+  font-size: 17.5px ;
+}
+
+.header__logo {
+  height: 42px;
+  margin-right: 45px;
+}
