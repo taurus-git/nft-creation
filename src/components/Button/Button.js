@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '../Icon/Icon'
 
 const Button = ( props ) => {
-    const className = 'button ' + props.class || '';
+    const className = `button ${ props.class || '' }`;
 
     return (
         <button className={ className } onClick={ props.onPress }>

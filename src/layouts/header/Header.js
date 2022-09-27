@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from "../container/Container/Container";
 import Search from "./Search";
 import Button from "../../components/Button/Button";
@@ -8,6 +8,12 @@ import Icon from "../../components/Icon/Icon";
 import "./Header.scss";
 
 const Header = ( ) => {
+    const [isActive, setActive] = useState(false);
+
+    const handleToggle = () => {
+        setActive(!isActive);
+    }
+
     return (
         <Container>
             <header className="header">
@@ -16,10 +22,9 @@ const Header = ( ) => {
                 </figure>
                 <Search/>
                 <div className="buttons">
-                    <div className="menu__dropdown">
-                        <Button class="button--nav" value="Explore" icon="#chevron" onPress={navButtonHandler}>
-                            <Menu/>
-                        </Button>
+                    <div className="menu__dropdown" onClick={handleToggle}>
+                        <Button class="button--nav" value="Explore" icon="#chevron" onPress={navButtonHandler} />
+                        <Menu class={isActive ? "active" : null} />
                     </div>
                     <Button class="button--cta" value="Connect Wallet" onPress={navButtonHandler2}/>
                 </div>

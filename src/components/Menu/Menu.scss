@@ -7,6 +7,10 @@
   background-color: #ffffff;
   border-radius: 5px;
 
+  &.active {
+    display: block;
+  }
+
   &__list {
     list-style: none;
 
@@ -28,8 +32,4 @@
 .menu__dropdown {
   position: relative;
   display: inline-block;
-
-  &:hover .menu{
-    display: block;
-  }
 }

@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Menu = () => {
+const Menu = (props) => {
+    const className = `menu ${ props.class || '' }`;
+
     return (
-        <nav className="menu">
+        <nav className={ className } >
             <ul className="menu__list">
                 <li>
                     <a href="#">Explore NFT's</a>
