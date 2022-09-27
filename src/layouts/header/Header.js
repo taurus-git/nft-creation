@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Container from "../container/Container/Container";
+import DropdownMenu from "../container/DropdownMenu/DropdownMenu"
 import Search from "./Search";
 import Button from "../../components/Button/Button";
 import { navButtonHandler, navButtonHandler2 } from "../../components/Button/ButtonsActions"
@@ -10,7 +11,7 @@ import "./Header.scss";
 const Header = ( ) => {
     const [isActive, setActive] = useState(false);
 
-    const handleToggle = () => {
+    const handleClick = () => {
         setActive(!isActive);
     }
 
@@ -22,10 +23,10 @@ const Header = ( ) => {
                 </figure>
                 <Search/>
                 <div className="buttons">
-                    <div className="menu__dropdown" onClick={handleToggle}>
+                    <DropdownMenu isActive={isActive} onMenuClick={handleClick}>
                         <Button class="button--nav" value="Explore" icon="#chevron" onPress={navButtonHandler} />
-                        <Menu class={isActive ? "active" : null} />
-                    </div>
+                        <Menu class={isActive ? "active" : ""} />
+                    </DropdownMenu>
                     <Button class="button--cta" value="Connect Wallet" onPress={navButtonHandler2}/>
                 </div>
             </header>
