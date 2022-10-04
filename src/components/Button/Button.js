@@ -6,7 +6,7 @@ const Button = ( props ) => {
 
     return (
         <button className={ className } onClick={ props.onPress }>
-            { props.value }
+            { props.children }
             { props.icon && <Icon icon={props.icon}/> }
         </button>
     );

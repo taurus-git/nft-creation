@@ -19,7 +19,7 @@
   padding-right: 40px;
   opacity: 1;
   background-color: #ffffff;
-  z-index: 10;
+  z-index: 1;
   overflow: hidden;
 
   &::before {
@@ -49,3 +49,5 @@
 .button--nav:hover::before {
   opacity: 1;
 }
+
+

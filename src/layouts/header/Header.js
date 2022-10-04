@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import Container from "../container/Container/Container";
-import DropdownMenu from "../container/DropdownMenu/DropdownMenu"
+import ModalWrapper from "../container/Modal/ModalWrapper";
+import ModalContent from "../container/Modal/ModalContent";
 import Search from "./Search";
 import Button from "../../components/Button/Button";
-import { navButtonHandler, navButtonHandler2 } from "../../components/Button/ButtonsActions"
+import { navButtonHandler2 } from "../../components/Button/ButtonsActions"
 import Menu from "../../components/Menu/Menu";
 import Icon from "../../components/Icon/Icon";
 import "./Header.scss";
 
 const Header = ( ) => {
-    const [isActive, setActive] = useState(false);
+    const [isMenuOpen, setMenuOpen] = useState(false);
+    const [isOpen, setOpen] = useState(false);
 
     const handleClick = () => {
-        setActive(!isActive);
+        setMenuOpen(!isMenuOpen);
+    }
+
+    const handleModalClick = () => {
+        setOpen(!isOpen);
     }
 
     const menuList = [
@@ -27,6 +33,18 @@ const Header = ( ) => {
         },
     ];
 
+    const walletModalContent = [
+        { "icon" : "#google",
+          "link": "https://www.google.com/",
+        },
+        { "icon" : "#mastercard",
+          "link": "https://www.mastercard.com/europe/en/home.html",
+        },
+        { "icon" : "#visa",
+            "link": "https://usa.visa.com/",
+        },
+    ];
+
     return (
         <Container>
             <header className="header">
@@ -35,11 +53,13 @@ const Header = ( ) => {
                 </figure>
                 <Search/>
                 <div className="buttons">
-                    <DropdownMenu isActive={isActive} onMenuClick={handleClick}>
-                        <Button class="button--nav" value="Explore" icon="#chevron" onPress={navButtonHandler} />
-                        <Menu menuList={menuList} class={isActive ? "active" : ""} />
-                    </DropdownMenu>
-                    <Button class="button--cta" value="Connect Wallet" onPress={navButtonHandler2}/>
+                    <ModalWrapper isOpen={isMenuOpen} onClick={handleClick}>
+                        <Button class="button--nav" icon="#chevron">Explore</Button>
+                        <Menu menuList={menuList} class={isMenuOpen ? "open" : ""} />
+                    </ModalWrapper>
+                    <ModalWrapper isOpen={isOpen} onClick={handleModalClick} content={ <ModalContent content={walletModalContent} /> }>
+                        <Button class="button--cta" onButtonPress={navButtonHandler2}>Connect Wallet</Button>
+                    </ModalWrapper>
                 </div>
             </header>
         </Container>

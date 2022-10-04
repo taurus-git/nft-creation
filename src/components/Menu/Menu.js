@@ -5,21 +5,17 @@ import { generateKey } from "../../services/GenerateKey/GenerateKey"
 const Menu = ( props ) => {
     const className = `menu ${ props.class || '' }`;
 
-    const menuItems = props.menuList.map( (linkData) => {
-        return (
-            <MenuItem key={generateKey(linkData.title)} linkData={linkData}/>
-        );
-    } );
-
     return (
-        <nav className={ className } >
+        <nav className={ className }>
             <ul className="menu__list">
-                { menuItems }
+                { props.menuList.map( ( linkData ) => (
+                    <MenuItem
+                        key={ generateKey( linkData.title ) }
+                        linkData={ linkData }/>
+                ) ) }
             </ul>
         </nav>
     );
 };
 
 export default Menu;
-
-
