@@ -2,6 +2,11 @@
   position: relative;
   display: inline-block;
 
+  &.btn-menu{
+    position: absolute;
+    display: block;
+  }
+
   &--bg-opacity {
     display: none;
     position: fixed;
@@ -17,6 +22,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+
     }
 
   }
