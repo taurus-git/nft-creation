@@ -6,8 +6,8 @@ import Search from "./Search";
 import Button from "../../components/Button/Button";
 import Menu from "../../components/Menu/Menu";
 import Icon from "../../components/Icon/Icon";
-import "./Header.scss";
 import { generateKey } from "../../services/GenerateKey/GenerateKey";
+import "./Header.scss";
 
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState( false );

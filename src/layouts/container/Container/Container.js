@@ -5,7 +5,7 @@ const Container = ( props ) => {
 
     return (
         <section className={ className }>
-            {props.children}
+            { props.children }
         </section>
     );
 }

@@ -5,11 +5,9 @@ const Icon = (props) => {
     const className = props.class || 'ui__icon';
 
     return (
-        <>
-            <svg className={className}>
-                <use href={ sprite + props.icon }></use>
-            </svg>
-        </>
+        <svg className={ className }>
+            <use href={ sprite + props.icon }></use>
+        </svg>
     );
 };
 

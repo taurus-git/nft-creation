@@ -7,7 +7,7 @@ const Button = ( props ) => {
     return (
         <button className={ className } onClick={ props.onClick }>
             { props.children }
-            { props.icon && <Icon icon={props.icon}/> }
+            { props.icon && <Icon icon={ props.icon }/> }
         </button>
     );
 }
