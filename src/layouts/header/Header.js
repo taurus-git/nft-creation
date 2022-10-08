@@ -4,7 +4,6 @@ import ModalWrapper from "../container/Modal/ModalWrapper";
 import ModalContent from "../container/Modal/ModalContent";
 import Search from "./Search";
 import Button from "../../components/Button/Button";
-import { navButtonHandler2 } from "../../components/Button/ButtonsActions"
 import Menu from "../../components/Menu/Menu";
 import Icon from "../../components/Icon/Icon";
 import "./Header.scss";
@@ -53,34 +52,35 @@ const Header = () => {
     ];
 
     const walletIcons = walletModalIcons.map( ( linkData ) => (
-            <a href={ linkData.link }>
+            <a key={ generateKey( linkData.icon ) } href={ linkData.link }>
                 <Icon
                     class="modal_icon"
-                    key={ generateKey( linkData.icon ) }
                     icon={ linkData.icon }/>
             </a>
         )
     )
 
     return (
-        <Container>
-            <header className="header">
-                <figure className="header__logo">
-                    <Icon icon="#header-logo" class="header__logo--icon"/>
-                </figure>
+        <header className="header">
+            <Container class="header">
+                <a href="/">
+                    <figure className="header__logo">
+                        <Icon icon="#header-logo" class="header__logo--icon"/>
+                    </figure>
+                </a>
                 <Search/>
                 <div className="buttons">
 
                     <Button onClick={ handleNavButtonClick } class="button--nav" icon="#chevron">Explore</Button>
 
-                    <ModalWrapper class={isMenuOpen ? "btn-menu" : ""}
-                                  opacityClass={isMenuOpen ? "open" : ""}
+                    <ModalWrapper class={ isMenuOpen ? "btn-menu" : "" }
+                                  opacityClass={ isMenuOpen ? "open" : "" }
                                   onClick={ handleNavButtonClick }
                                   content={ <Menu menuList={ menuList }
                                                   class={ isMenuOpen ? "open" : "" }/>
-                    }/>
+                                  }/>
 
-                    <ModalWrapper opacityClass={isOpen ? "open" : ""}
+                    <ModalWrapper opacityClass={ isOpen ? "open" : "" }
                                   onClick={ handleModalClick }
                                   content={ <Button class="button--cta">
                                       Connect Wallet</Button> }>
@@ -90,8 +90,8 @@ const Header = () => {
                     </ModalWrapper>
 
                 </div>
-            </header>
-        </Container>
+            </Container>
+        </header>
     );
 }
 
