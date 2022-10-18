@@ -10,9 +10,9 @@ export default function SlideList() {
             className="slide-list"
             style={ { transform: `translateX(-${ sliderNumber - 10 }%)` } }
         >
-            {collections.map((slide, index) => (
-                <Slide key={index} data={slide.banner_image_url} />
-            ))}
+            { collections.map( ( slide, index ) => (
+                <Slide key={ index } data={ slide }/>
+            ) ) }
         </div>
     );
 };
