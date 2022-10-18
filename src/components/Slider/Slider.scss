@@ -1,6 +1,7 @@
 .slider {
   overflow: hidden;
   position: relative;
+  height: 500px;
 
   & .slide-list {
     display: flex;
@@ -75,19 +76,19 @@
       }
 
       &.left {
-        background-image: url(../../assets/images/arrow.svg);
+        background-image: url(../../assets/images/chevron.svg);
         background-repeat: no-repeat;
         background-size: contain;
         margin-left: 5px;
-        transform: rotate(
-                        180deg);
+        transform: rotate(90deg);
       }
 
       &.right {
-        background-image: url(../../assets/images/arrow.svg);
+        background-image: url(../../assets/images/chevron.svg);
         background-repeat: no-repeat;
         background-size: contain;
         margin-right: 5px;
+        transform: rotate(-90deg);
       }
     }
   }
