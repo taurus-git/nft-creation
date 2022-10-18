@@ -1,11 +1,5 @@
 import React from 'react';
 
-const SlideImage = () => {
-    return (
-        <>
-
-        </>
-    );
+export default function SlideImage({src}) {
+    return <img src={src} alt=""/>;
 };
-
-export default SlideImage;
