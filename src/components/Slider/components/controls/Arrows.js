@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { SliderContext, sliderContext } from "../../Slider";
+import { SliderContext } from "../../Slider";
 
 export default function Arrows() {
     const { changeSlide } = useContext( SliderContext );

@@ -27,17 +27,19 @@ const Slider = ( { width, height, autoPlay, autoPlayTime } ) => {
         loadData();
     }, [] );
 
-    const changeSlide = ( direction = 1 ) => {
+    const changeSlide = (direction = 1) => {
         let slideNumber = 0;
 
-        if ( slide + direction < 0 ) {
+        if (slide + direction < 0) {
             slideNumber = collections.length - 1;
         } else {
             slideNumber = (slide + direction) % collections.length;
         }
 
-        setSlide( slideNumber );
-    }
+        console.log(slideNumber);
+
+        setSlide(slideNumber);
+    };
 
     const goToSlide = ( number ) => {
         setSlide( number % collections.length );
