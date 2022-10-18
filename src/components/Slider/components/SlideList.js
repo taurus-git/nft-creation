@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SlideImage = () => {
+const SlideList = () => {
     return (
         <>
 
@@ -8,4 +8,4 @@ const SlideImage = () => {
     );
 };
 
-export default SlideImage;
+export default SlideList;
