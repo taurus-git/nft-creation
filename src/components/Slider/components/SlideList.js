@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Slide from "./Slide";
+import { SliderContext } from "../Slider";
 
-const SlideList = () => {
+export default function SlideList() {
+    const { sliderNumber, collections } = useContext( SliderContext )
+
     return (
-        <>
-
-        </>
+        <div
+            className="slide-list"
+            style={ { transform: `translateX(-${ sliderNumber - 10 }%)` } }
+        >
+            {collections.map((slide, index) => (
+                <Slide key={index} data={slide.banner_image_url} />
+            ))}
+        </div>
     );
 };
-
-export default SlideList;
