@@ -1,25 +1,15 @@
 import React from 'react';
 
 export default function SlideImage({src}) {
-    //обычные устройства, медиа
-    //640
-    //750
-    //1080
-    //2048
-
-    //ретина, медиа
-    //750
-    //1080
-    //2048
-
-    let getImageSrcSet = (set) => {
+    const getImageSrcSet = (set) => {
         return src.replace( "w=500", `w=${set}` );
     }
 
-
     return (
-        <img
-            srcSet={`${getImageSrcSet(640)} 1x, ${getImageSrcSet(750)} 2x`}
-        />
+        <picture>
+            <source srcSet={`${getImageSrcSet(640)} 1x, ${getImageSrcSet(750)} 2x`}
+                    media="(max-width: 600px)" />
+            <img srcSet={`${getImageSrcSet(1080)} 1x, ${getImageSrcSet(2048)} 2x`} />
+        </picture>
     );
 };

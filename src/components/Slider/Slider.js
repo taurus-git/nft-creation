@@ -29,7 +29,7 @@ const Slider = ( { width, height, autoPlay, autoPlayTime } ) => {
 
     const changeSlide = ( direction = 1 ) => {
         let slideNumber = 0;
-
+        console.log(direction);
         if ( slide + direction < 0 ) {
             slideNumber = collections.length - 1;
         } else {

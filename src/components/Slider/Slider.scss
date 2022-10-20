@@ -15,9 +15,14 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      border-radius: 15px;
 
-      & img {
-        height: 700px;
+      & picture{
+        width: 100%;
+      }
+
+      & picture > img {
+        height: 695px;
         width: 100%;
         object-fit: cover;
       }
@@ -70,10 +75,32 @@
     display: flex;
     font-size: 30px;
     justify-content: space-between;
-    height: 100%;
+    height: 695px;
     position: absolute;
     width: 100%;
     z-index: 1;
+
+    & .direction-left, & .direction-right {
+      height: 100%;
+      width: 45px;
+      background-color: #ccc;
+      opacity: 0.1;
+      transition: all .3s;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    & .direction-left {
+      border-radius: 15px 0 0 15px;
+    }
+
+    & .direction-right {
+      border-radius: 0 15px 15px 0;
+
+
+    }
 
     & .arrow {
       height: 30px;
@@ -84,7 +111,6 @@
       }
 
       &.left, &.right {
-        background-image: url(../../assets/images/chevron.svg);
         top: 45%;
         position: absolute;
         background-repeat: no-repeat;
