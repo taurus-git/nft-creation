@@ -17,6 +17,14 @@
       overflow: hidden;
       border-radius: 15px;
 
+      &__info {
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        top: 30%;
+        overflow: hidden;
+      }
+
       & picture{
         width: 100%;
       }
