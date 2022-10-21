@@ -49,6 +49,29 @@
         position: absolute;
         left: 10%;
         bottom: 10%;
+
+        & * {
+          margin-right: 20px;
+        }
+
+        & .slider__cta {
+
+          &--black {
+            color: #ffffff;
+            background-color: black;
+
+            & .ui__icon {
+              right: 3%;
+              fill: #ffffff;
+            }
+
+          }
+
+          & .ui__icon {
+            right: 2%;
+          }
+        }
+
       }
 
       & picture{
