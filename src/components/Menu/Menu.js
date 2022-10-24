@@ -6,7 +6,7 @@ const Menu = ( props ) => {
     const className = `menu ${ props.class || '' }`;
 
     return (
-        <nav className={ className }>
+        <nav ref={ props.innerRef } className={ className }>
             <ul className="menu__list">
                 { props.menuList.map( ( linkData ) => (
                     <MenuItem

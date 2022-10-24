@@ -5,7 +5,7 @@ const Button = ( props ) => {
     const className = `button ${ props.class || '' }`;
 
     return (
-        <button className={ className } onClick={ props.onClick }>
+        <button ref={props.innerRef} className={ className } onClick={ props.onClick }>
             { props.children }
             { props.icon && <Icon icon={ props.icon }/> }
         </button>

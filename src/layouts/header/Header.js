@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Container from "../container/Container/Container";
 import ModalWrapper from "../container/Modal/ModalWrapper";
 import ModalContent from "../container/Modal/ModalContent";
@@ -12,6 +12,7 @@ import "./Header.scss";
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState( false );
     const [isOpen, setOpen] = useState( false );
+    const navButton = useRef(null);
 
     const handleNavButtonClick = () => {
         setMenuOpen( !isMenuOpen );
@@ -60,6 +61,21 @@ const Header = () => {
         )
     )
 
+    useEffect(() => {
+        function handleClickOutside(event) {
+
+            if (navButton.current && !navButton.current.contains(event.target)) {
+                setMenuOpen( false );
+            }
+        }
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [navButton]);
+
     return (
         <header className="header">
             <Container class="header">
@@ -70,17 +86,11 @@ const Header = () => {
                 </a>
                 <Search/>
                 <div className="buttons">
-                    <Button onClick={ handleNavButtonClick } class="button--nav" icon="#chevron">Explore</Button>
-                    <ModalWrapper class={ isMenuOpen ? "btn-menu" : "" }
-                                  opacityClass={ isMenuOpen ? "open" : "" }
-                                  onClick={ handleNavButtonClick }>
-                        <Menu menuList={ menuList }
-                              class={ isMenuOpen ? "open" : "" }/>
-                    </ModalWrapper>
+                    <Button innerRef={navButton} onClick={ handleNavButtonClick } class="button--nav" icon="#chevron">Explore</Button>
+                    <Menu innerRef={navButton} menuList={ menuList } class={ isMenuOpen ? "open" : "" }/>
 
                     <Button class="button--cta" onClick={ handleModalClick }>Connect Wallet</Button>
-                    <ModalWrapper opacityClass={ isOpen ? "open" : "" }
-                                  onClick={ handleModalClick }>
+                    <ModalWrapper opacityClass={ isOpen ? "open" : "" } onClick={ handleModalClick }>
                         <ModalContent content={ walletIcons }>
                             <h2 className="modal-content-heading">Connect your wallet to buy NFT</h2>
                         </ModalContent>
