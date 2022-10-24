@@ -4,6 +4,8 @@
 
   & .slide-list {
     display: flex;
+    position: relative;
+    z-index: 2;
     transition: transform 0.5s ease-in-out;
     width: 100%;
     height: 700px;
@@ -76,10 +78,11 @@
 
       & picture{
         width: 100%;
+        height: 100%;
       }
 
       & picture > img {
-        height: 695px;
+        height: 100%;
         width: 100%;
         object-fit: cover;
       }
@@ -123,17 +126,11 @@
   /* ARROWS */
 
   & .arrows {
-    color: white;
-    display: flex;
-    font-size: 30px;
-    justify-content: space-between;
-    height: 695px;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
 
     & .direction-left, & .direction-right {
-      height: 100%;
+      position: absolute;
+      z-index: 3;
+      height: 700px;
       width: 45px;
       background-color: #ccc;
       opacity: 0.1;
@@ -146,12 +143,12 @@
 
     & .direction-left {
       border-radius: 15px 0 0 15px;
+      left: 0;
     }
 
     & .direction-right {
       border-radius: 0 15px 15px 0;
-
-
+      right: 0;
     }
 
     & .arrow {
@@ -164,6 +161,7 @@
 
       &.left, &.right {
         top: 45%;
+        left: 0;
         position: absolute;
         background-repeat: no-repeat;
         background-size: contain;

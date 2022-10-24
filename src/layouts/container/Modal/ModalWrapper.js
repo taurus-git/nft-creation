@@ -1,14 +1,14 @@
 import React from 'react';
+import PortalReactDOM from 'react-dom';
 
 const ModalWrapper = ( props ) => {
-    return (
+    return PortalReactDOM.createPortal(
         <div className={ `modal ${ props.class ? props.class : "" }` } onClick={ props.onClick }>
-            { props.content }
-
             <div className={ `modal--bg-opacity ${ props.opacityClass }` }>
                 { props.children }
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };
 

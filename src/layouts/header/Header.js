@@ -70,20 +70,17 @@ const Header = () => {
                 </a>
                 <Search/>
                 <div className="buttons">
-
                     <Button onClick={ handleNavButtonClick } class="button--nav" icon="#chevron">Explore</Button>
-
                     <ModalWrapper class={ isMenuOpen ? "btn-menu" : "" }
                                   opacityClass={ isMenuOpen ? "open" : "" }
-                                  onClick={ handleNavButtonClick }
-                                  content={ <Menu menuList={ menuList }
-                                                  class={ isMenuOpen ? "open" : "" }/>
-                                  }/>
+                                  onClick={ handleNavButtonClick }>
+                        <Menu menuList={ menuList }
+                              class={ isMenuOpen ? "open" : "" }/>
+                    </ModalWrapper>
 
+                    <Button class="button--cta" onClick={ handleModalClick }>Connect Wallet</Button>
                     <ModalWrapper opacityClass={ isOpen ? "open" : "" }
-                                  onClick={ handleModalClick }
-                                  content={ <Button class="button--cta">
-                                      Connect Wallet</Button> }>
+                                  onClick={ handleModalClick }>
                         <ModalContent content={ walletIcons }>
                             <h2 className="modal-content-heading">Connect your wallet to buy NFT</h2>
                         </ModalContent>

@@ -23,9 +23,10 @@ export default function Slide( { data: { banner_image_url, name, description } }
     ];
 
     const handleNavButtonClick = () => {
-       console.log(153);
+       console.log('clicked');
         // setMenuOpen( !isMenuOpen );
     }
+
     return (
         <div className="slide">
             <div className="slide__info">
@@ -36,13 +37,6 @@ export default function Slide( { data: { banner_image_url, name, description } }
                 <Button onClick={ handleNavButtonClick } class="button--nav slider__cta" icon="#chevron">
                     Create
                 </Button>
-
-                <ModalWrapper class={ isMenuOpen ? "btn-menu" : "" }
-                              opacityClass={ isMenuOpen ? "open" : "" }
-                              onClick={ handleNavButtonClick }
-                              content={ <Menu menuList={ menuList }
-                                              class={ isMenuOpen ? "open" : "" }/>
-                              }/>
 
                 <Button class="button--nav slider__cta--black" icon="#chevron">
                     Explore
