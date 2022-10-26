@@ -7,6 +7,5 @@ export const getCollections = async ( limit= 100 ) => {
 };
 
 export const getSingleCollection = async () => {
-    const openseaData = await collection.get();
-    return openseaData;
+    return await collection.get();
 };

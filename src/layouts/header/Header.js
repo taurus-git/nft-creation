@@ -28,7 +28,7 @@ const Header = () => {
             "link": "https://www.google.com/"
         },
         {
-            "title": "Explore Categories",
+            "title": "Explore SectionInfo",
             "link": "https://mail.google.com/mail/u/0/?ogbl#inbox"
         },
         {

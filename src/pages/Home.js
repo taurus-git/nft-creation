@@ -2,14 +2,19 @@ import React from 'react';
 import Header from "../layouts/header/Header";
 import Slider from "../components/Slider/Slider";
 import Container from "../layouts/container/Container/Container";
+import SectionInfo from "../layouts/container/SectionInfo/SectionInfo";
+import SectionTitle from "../components/SectionTitle/SectionTitle";
 
 const Home = () => {
     return (
         <>
-            <Header />
+            <Header/>
             <main>
                 <Container>
-                    <Slider />
+                    <Slider/>
+                    <SectionInfo>
+                        <SectionTitle />
+                    </SectionInfo>
                 </Container>
             </main>
         </>

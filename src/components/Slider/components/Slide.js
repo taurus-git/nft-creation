@@ -13,7 +13,7 @@ export default function Slide( { data: { banner_image_url, name, description } }
             "link": "https://www.google.com/"
         },
         {
-            "title": "Explore Categories",
+            "title": "Explore SectionInfo",
             "link": "https://mail.google.com/mail/u/0/?ogbl#inbox"
         },
         {
