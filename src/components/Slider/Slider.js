@@ -14,9 +14,13 @@ const Slider = ( { width, height, autoPlay, autoPlayTime } ) => {
     const [slide, setSlide] = useState( 0 );
     const [touchPosition, setTouchPosition] = useState( null );
 
+    const [col, setCol] = useState([]);
+
     useEffect( () => {
         const loadData = async () => {
             const openseaCollections = await getCollections( 50 );
+
+            console.log(openseaCollections);
 
             const collections = openseaCollections.filter( collection => {
                 if ( collection.banner_image_url !== null ) {
@@ -88,6 +92,11 @@ const Slider = ( { width, height, autoPlay, autoPlayTime } ) => {
              onTouchStart={handleTouchStart}
              onTouchMove={handleTouchMove}
         >
+
+            { console.log( collections ) }
+
+
+
             <SliderContext.Provider
                 value={ {
                     goToSlide,
