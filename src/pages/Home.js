@@ -13,7 +13,7 @@ const Home = () => {
                 <Container>
                     <Slider/>
                     <SectionInfo>
-                        <SectionTitle />
+                        <SectionTitle title="Browse by Category" icon="#collection" />
                     </SectionInfo>
                 </Container>
             </main>
