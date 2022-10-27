@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 
-import { getCollections, getSingleCollection } from "../../services/apis/GetCollections";
+import { apisFunctions } from "../../services/apis/ApisFunctions";
 
 import Arrows from "./components/controls/Arrows";
 import Dots from "./components/controls/Dots";
@@ -12,23 +12,12 @@ export const SliderContext = createContext();
 const Slider = ( { width, height, autoPlay, autoPlayTime } ) => {
     const [collections, setCollections] = useState( [] );
 
-    /*const [collection, setCollection] = useState( [] );*/
-
     const [slide, setSlide] = useState( 0 );
     const [touchPosition, setTouchPosition] = useState( null );
 
-/*    useEffect( () => {
-        const loadCollection = async () => {
-            const openseaCollection = await getSingleCollection( );
-
-            setCollection( openseaCollection.data.assets );
-        };
-        loadCollection();
-    }, [] );*/
-
     useEffect( () => {
         const loadData = async () => {
-            const openseaCollections = await getCollections( 50 );
+            const openseaCollections = await apisFunctions( 50 );
             const collections = openseaCollections.filter( collection => {
                 if ( collection.banner_image_url !== null ) {
                     return collection.banner_image_url
@@ -96,13 +85,9 @@ const Slider = ( { width, height, autoPlay, autoPlayTime } ) => {
     return (
         <div style={ { width, height } }
              className="slider"
-             onTouchStart={handleTouchStart}
-             onTouchMove={handleTouchMove}
+             onTouchStart={ handleTouchStart }
+             onTouchMove={ handleTouchMove }
         >
-
-           {/* {console.log(collection)}*/}
-
-
             <SliderContext.Provider
                 value={ {
                     goToSlide,

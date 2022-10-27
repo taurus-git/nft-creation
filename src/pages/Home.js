@@ -2,8 +2,9 @@ import React from 'react';
 import Header from "../layouts/header/Header";
 import Slider from "../components/Slider/Slider";
 import Container from "../layouts/container/Container/Container";
-import SectionInfo from "../layouts/container/SectionInfo/SectionInfo";
-import SectionTitle from "../components/SectionTitle/SectionTitle";
+import Section from "../layouts/container/Section/Section";
+import SectionTitle from "../components/SectionInfo/Title/SectionTitle";
+import CardCategories from "../layouts/container/CardCategories/CardCategories";
 
 const Home = () => {
     return (
@@ -12,9 +13,10 @@ const Home = () => {
             <main>
                 <Container>
                     <Slider/>
-                    <SectionInfo>
+                    <Section>
                         <SectionTitle title="Browse by Category" icon="#collection" />
-                    </SectionInfo>
+                    </Section>
+                    <CardCategories />
                 </Container>
             </main>
         </>

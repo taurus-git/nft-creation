@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SectionInfo = props => {
+const Section = props => {
     return (
         <div className="section__info">
             { props.children }
@@ -8,4 +8,4 @@ const SectionInfo = props => {
     );
 };
 
-export default SectionInfo;
+export default Section;
