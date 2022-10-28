@@ -1,9 +1,16 @@
 import React from 'react';
 
 const NftCard = ( props ) => {
+   /* small возвращает фотографию в формате jpg шириной 400 пикселей.
+        thumb возвращает фотографию в формате jpg шириной 200 пикселей.*/
+
     return (
         <>
-            <img className="nft small" src={ props.image.urls.regular } alt={props.image.id}/>
+            <picture className="nft--small">
+                <source srcSet={ `${ props.image.urls.small } 1x, ${ props.image.urls.thumb } 2x` }
+                        media="(max-width: 600px)"/>
+                <img srcSet={ `${ props.image.urls.small } 1x, ${ props.image.urls.thumb } 2x` } alt={props.image.id}/>
+            </picture>
         </>
     );
 };
