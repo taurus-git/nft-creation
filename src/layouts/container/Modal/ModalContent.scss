@@ -5,7 +5,7 @@
   width: 500px;
   margin: 15% auto;
   box-shadow: var(--shadow-dark);
-  border-radius: 5px;
+  border-radius: var(--border-radius--small);
   transition: all 5s;
 
   &-heading {
@@ -42,7 +42,7 @@
 
     &:hover {
       background-color: #e5e5e5;
-      border-radius: 5px;
+      border-radius: var(--border-radius--small);
     }
 
     &:hover .modal_icon {

@@ -5,7 +5,7 @@
   box-shadow: var(--shadow-dark);
   z-index: 150;
   background-color: #ffffff;
-  border-radius: 5px;
+  border-radius: var(--border-radius--small);
 
   &.open {
     display: block;
@@ -16,7 +16,7 @@
 
     & li:hover {
       background-color: rgba(248, 248, 248);
-      border-radius: 5px;
+      border-radius: var(--border-radius--small);
     }
 
     & a {

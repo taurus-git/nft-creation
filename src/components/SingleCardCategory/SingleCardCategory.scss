@@ -1,0 +1,26 @@
+.single-card-category {
+  width: 333px;
+  height: 208px;
+  position: relative;
+  overflow: hidden;
+  margin: 70px 0 5px 0;
+
+  &--images {
+    display: flex;
+  }
+
+  & h4 {
+    height: 54px;
+    line-height: 54px;
+    background-color: var(--light-grey2);
+    padding: 0 22px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 5;
+    font-weight: 400;
+    font-size: 21px;
+  }
+}

@@ -17,7 +17,7 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      border-radius: 15px;
+      @include border-radius;
 
       &__info {
         position: absolute;
@@ -27,7 +27,7 @@
         overflow: hidden;
         background-color: rgb(0 0 0 / 2%);
         backdrop-filter: blur(2px);
-        border-radius: 15px;
+        @include border-radius;
         z-index: 110;
         max-height: 50%;
       }
@@ -108,7 +108,7 @@
 
     & .dot {
       background-color: #e7e7e7;
-      border-radius: 5px;
+      border-radius: var(--border-radius--small);
       height: 10px;
       margin: 5px;
       width: 10px;
@@ -142,12 +142,12 @@
     }
 
     & .direction-left {
-      border-radius: 15px 0 0 15px;
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
       left: 0;
     }
 
     & .direction-right {
-      border-radius: 0 15px 15px 0;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
       right: 0;
     }
 

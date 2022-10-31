@@ -16,8 +16,10 @@ const SingleCardCategory = ( props ) => {
     }, [] );
 
     return (
-        <div>
-            { nftImages.map( image => <NftCard key={ image.id } image={ image }/> ) }
+        <div className="single-card-category">
+            <div className="single-card-category--images">
+                { nftImages.map( image => <NftCard key={ image.id } image={ image }/> ) }
+            </div>
             <h4>{ props.name }</h4>
         </div>
     );
