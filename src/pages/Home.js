@@ -3,7 +3,7 @@ import Header from "../layouts/header/Header";
 import Slider from "../components/Slider/Slider";
 import Container from "../layouts/container/Container/Container";
 import Section from "../layouts/container/Section/Section";
-import SectionTitle from "../components/SectionInfo/Title/SectionTitle";
+import SectionHeader from "../components/SectionInfo/Title/SectionHeader";
 import CardCategories from "../layouts/container/CardCategories/CardCategories";
 
 const Home = () => {
@@ -14,9 +14,19 @@ const Home = () => {
                 <Container>
                     <Slider/>
                     <Section>
-                        <SectionTitle title="Browse by Category" icon="#collection" />
+                        <SectionHeader title="Browse by Category" icon="#collection"/>
                     </Section>
-                    <CardCategories />
+                    <CardCategories/>
+                    <Section class="picked-collections">
+                        <div className="picked-collections--title">
+                            <SectionHeader title="Hand Picked Collections " icon="#collection"/>
+                        </div>
+                        <div className="picked-collections--link">
+                            <a href="/#">
+                                <SectionHeader title="Trending Collections" icon="#chevron" />
+                            </a>
+                        </div>
+                    </Section>
                 </Container>
             </main>
         </>

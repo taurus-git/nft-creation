@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from "../../Icon/Icon";
 
-const SectionTitle = props => {
+const SectionHeader = props => {
     return (
         <>
             { props.icon && <Icon icon={ props.icon } class="section__icon"/> }
@@ -10,4 +10,4 @@ const SectionTitle = props => {
     );
 };
 
-export default SectionTitle;
+export default SectionHeader;

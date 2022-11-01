@@ -1,0 +1,37 @@
+.section__info {
+  display: flex;
+  align-items: center;
+  padding: 0 13px;
+  font-size: 24px;
+  font-weight: 600;
+
+  & .section__icon {
+    width: 23px;
+    height: 23px;
+    margin-right: 13px;
+  }
+}
+
+.picked-collections {
+  justify-content: space-between;
+
+  &--title {
+    display: flex;
+    align-items: center;
+  }
+
+  &--link a{
+    display: flex;
+    align-items: center;
+
+  }
+
+  &--link a{
+    flex-direction: row-reverse;
+
+    & .section__icon {
+      rotate: 270deg;
+    }
+  }
+
+}
