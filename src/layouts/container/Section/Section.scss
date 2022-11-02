@@ -23,15 +23,22 @@
   &--link a{
     display: flex;
     align-items: center;
-
-  }
-
-  &--link a{
     flex-direction: row-reverse;
 
     & .section__icon {
       rotate: 270deg;
+      height: 10px;
+      width: 13px;
+    }
+
+    & .section__title {
+      font-size: 17.5px;
+      font-weight: 600;
+      line-height: 1.2;
     }
   }
+
+
+
 
 }

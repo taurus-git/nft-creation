@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SlideImage from "./SlideImage";
 import Button from "../../Button/Button";
 import Menu from "../../Menu/Menu";
@@ -34,7 +34,7 @@ export default function Slide( { data: { banner_image_url, name, description } }
                 <p className="slide__description">{ description }</p>
             </div>
             <div className="slide__buttons">
-                <Button onClick={ handleNavButtonClick } class="button--nav slider__cta" icon="#chevron">
+                <Button class="button--nav slider__cta" icon="#chevron">
                     Create
                 </Button>
 

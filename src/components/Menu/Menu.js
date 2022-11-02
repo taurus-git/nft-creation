@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuItem from "./MenuItem";
-import { generateKey } from "../../services/GenerateKey/GenerateKey"
+import { generateKey } from "../../services/Helpers/helpers";
 
 const Menu = ( props ) => {
     const className = `menu ${ props.class || '' }`;

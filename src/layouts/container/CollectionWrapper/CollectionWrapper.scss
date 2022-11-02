@@ -1,0 +1,22 @@
+.collection__wrapper {
+  @include border-radius;
+  overflow: hidden;
+  height: 532px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--bg-image {
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+
+    & img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
+}
