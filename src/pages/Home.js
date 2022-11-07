@@ -13,6 +13,7 @@ import { getSingleCollection } from "../services/apis/nftImages";
 const Home = () => {
     const [collections, setCollections] = useState( [] );
     const [singleCollection, setSingleCollection] = useState( [] );
+    const [socialTag, setSocialTag] = useState( [] );
 
     const [nftImages0, setNftImages0] = useState( null );
     const [nftImages1, setNftImages1] = useState( null );
@@ -46,8 +47,14 @@ const Home = () => {
 
     }, [] );
 
-    if (!nftImages0) return null;
-    if (!nftImages1) return null;
+    useEffect( () => {
+        if ( !singleCollection.slug ) return;
+        setSocialTag( singleCollection.slug.toUpperCase() );
+    }, [singleCollection.slug] );
+
+
+    if ( !nftImages0 ) return null;
+    if ( !nftImages1 ) return null;
 
     return (
         <>
@@ -69,7 +76,8 @@ const Home = () => {
                             </a>
                         </div>
                     </Section>
-                    <CollectionWrapper nft={nftImages0}  singleCollection={ singleCollection }/>
+                    <CollectionWrapper socialTag={ socialTag } nft={ nftImages0 }
+                                       singleCollection={ singleCollection }/>
                 </Container>
             </main>
         </>

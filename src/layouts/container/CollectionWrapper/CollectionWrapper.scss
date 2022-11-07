@@ -29,7 +29,7 @@
   }
 
   &_card {
-    width: 32%;
+    flex-basis: 33%;
     @include border-radius;
     overflow: hidden;
     position: relative;
@@ -39,6 +39,33 @@
       width: 100%;
       height: 100%;
     }
+  }
+
+  &_collection--info {
+    flex-basis: 30%;
+    align-self: flex-start;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    margin: 0 50px;
+    text-align: center;
+
+    &--nfts-counter {
+      color: inherit;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+  }
+
+  &--title {
+    font-size: 34px;
+    color: inherit;
+    line-height: 1.15;
+    letter-spacing: 6px;
+    margin-bottom: 11px;
   }
 
 }

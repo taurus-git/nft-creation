@@ -13,7 +13,7 @@ const NftInfo = props => {
                     { props.priceTitle }
                     <div className="nft-info_price-value">
                         { props.priceValue }
-                     </div>
+                    </div>
                 </div>
                 { props.promoTimer && <div>End in { props.promoTimer }</div> }
             </div>

@@ -20,10 +20,11 @@ const CollectionWrapper = ( props ) => {
                              priceTitle="Buy Now" priceValue="1.00 ETH"></NftInfo>
                 </div>
                 <div className={ `${ className }_collection--info` }>
-                    <SocialTag icon="#hash" class="social-tag--hash">{ props.singleCollection.slug }</SocialTag>
+                    <SocialTag icon="#hash" class="social-tag--hash">{ props.socialTag }</SocialTag>
                     <HeroImage collection={ props.singleCollection }/>
                     <Title class={ `${ className }--title` }>{ props.singleCollection.name }</Title>
-                    <SocialTag class="social-tag">{ props.singleCollection.slug }</SocialTag>
+                    <span className={ `${ className }--nfts-counter` }>4 NFTs</span>
+                    <SocialTag class="social-tag">{ "@" + props.singleCollection.slug }</SocialTag>
                 </div>
                 <div className={ `${ className }_card` }>
                     <NftCard class="nft--large" key={ props.nft[1].id } image={ props.nft[1] }/>
