@@ -8,10 +8,14 @@ import CardCategories from "../layouts/container/CardCategories/CardCategories";
 import CollectionWrapper from "../layouts/container/CollectionWrapper/CollectionWrapper";
 import { apisFunctions } from "../services/apis/ApisFunctions";
 import { getRandomInt } from "../services/Helpers/helpers";
+import { getSingleCollection } from "../services/apis/nftImages";
 
 const Home = () => {
     const [collections, setCollections] = useState( [] );
     const [singleCollection, setSingleCollection] = useState( [] );
+
+    const [nftImages0, setNftImages0] = useState( null );
+    const [nftImages1, setNftImages1] = useState( null );
 
     useEffect( () => {
         const loadData = async () => {
@@ -26,7 +30,24 @@ const Home = () => {
             setSingleCollection( collections[getRandomInt( collections.length )] );
         };
         loadData();
+
+        const per_page = 2;
+
+        const getNftImages = async term => {
+            const images0 = await getSingleCollection( term[0], per_page );
+            const images1 = await getSingleCollection( term[1], per_page );
+            const nftImages0 = images0.data.results;
+            const nftImages1 = images1.data.results;
+            setNftImages0( nftImages0 );
+            setNftImages1( nftImages1 );
+        }
+
+        getNftImages( ["Arts", "Sports"] );
+
     }, [] );
+
+    if (!nftImages0) return null;
+    if (!nftImages1) return null;
 
     return (
         <>
@@ -48,7 +69,7 @@ const Home = () => {
                             </a>
                         </div>
                     </Section>
-                    <CollectionWrapper singleCollection={ singleCollection }/>
+                    <CollectionWrapper nft={nftImages0}  singleCollection={ singleCollection }/>
                 </Container>
             </main>
         </>
