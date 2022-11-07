@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   &--bg-image {
     width: 100%;
@@ -18,5 +19,26 @@
     }
   }
 
+  &_content {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    max-height: 88%;
+    width: 84.4%;
+    left: 7.7%;
+  }
+
+  &_card {
+    width: 32%;
+    @include border-radius;
+    overflow: hidden;
+    position: relative;
+
+    & .nft--large img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
 
 }
