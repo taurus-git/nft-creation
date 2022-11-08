@@ -9,6 +9,7 @@ import CollectionWrapper from "../layouts/container/CollectionWrapper/Collection
 import { apisFunctions } from "../services/apis/ApisFunctions";
 import { getRandomInt } from "../services/Helpers/helpers";
 import { getSingleCollection } from "../services/apis/nftImages";
+import PromoSection from "../components/PromoSection/PromoSection";
 
 const Home = () => {
     const [collections, setCollections] = useState( [] );
@@ -81,6 +82,9 @@ const Home = () => {
                                        singleCollection={ singleCollection0 }/>
                     <CollectionWrapper class="promo" socialTag={ socialTag } nft={ nftImages1 }
                                        singleCollection={ singleCollection1 }/>
+                    <PromoSection subtitle="Join the millions of creators, collectors, and curators who are on this journey with you.">
+                        Be a Creative <span className="promo-section__title--bold">Creator</span>
+                    </PromoSection>
                 </Container>
             </main>
         </>
