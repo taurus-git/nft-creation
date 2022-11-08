@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import SlideImage from "./SlideImage";
 import Button from "../../Button/Button";
-import Menu from "../../Menu/Menu";
-import ModalWrapper from "../../../layouts/container/Modal/ModalWrapper";
 
 export default function Slide( { data: { banner_image_url, name, description } } ) {
     const [isMenuOpen, setMenuOpen] = useState( false );
@@ -23,8 +21,8 @@ export default function Slide( { data: { banner_image_url, name, description } }
     ];
 
     const handleNavButtonClick = () => {
-       console.log('clicked');
-        // setMenuOpen( !isMenuOpen );
+        console.log( 'clicked' ); //Todo: add a menu on click
+        setMenuOpen( !isMenuOpen );
     }
 
     return (
@@ -34,7 +32,7 @@ export default function Slide( { data: { banner_image_url, name, description } }
                 <p className="slide__description">{ description }</p>
             </div>
             <div className="slide__buttons">
-                <Button onClick={ handleNavButtonClick } class="button--nav slider__cta" icon="#chevron">
+                <Button class="button--nav slider__cta" icon="#chevron">
                     Create
                 </Button>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import SingleCardCategory from "../../../components/SingleCardCategory/SingleCardCategory";
-import { generateKey } from "../../../services/GenerateKey/GenerateKey";
+import { generateKey } from "../../../services/Helpers/helpers";
 
 const CardCategories = () => {
     const categories = [

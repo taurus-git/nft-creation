@@ -6,7 +6,7 @@ import Search from "./Search";
 import Button from "../../components/Button/Button";
 import Menu from "../../components/Menu/Menu";
 import Icon from "../../components/Icon/Icon";
-import { generateKey } from "../../services/GenerateKey/GenerateKey";
+import { generateKey } from "../../services/Helpers/helpers";
 import "./Header.scss";
 
 const Header = () => {
