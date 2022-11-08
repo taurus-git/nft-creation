@@ -10,6 +10,7 @@ import { apisFunctions } from "../services/apis/ApisFunctions";
 import { getRandomInt } from "../services/Helpers/helpers";
 import { getSingleCollection } from "../services/apis/nftImages";
 import PromoSection from "../components/PromoSection/PromoSection";
+import PromoBoxes from "../components/PromoBoxes/PromoBoxes";
 
 const Home = () => {
     const [collections, setCollections] = useState( [] );
@@ -58,6 +59,21 @@ const Home = () => {
     if ( !nftImages0 ) return null;
     if ( !nftImages1 ) return null;
 
+    const promoBoxes = [
+        {
+            "title": "Connect",
+            "description": "Connect With supported wallets.",
+        },
+        {
+            "title": "Collect",
+            "description": "Unearth NFTs for your growing collection.",
+        },
+        {
+            "title": "Sell",
+            "description": "Your NFTs will shine in our marketplace.",
+        }
+    ]
+
     return (
         <>
             <Header/>
@@ -82,9 +98,11 @@ const Home = () => {
                                        singleCollection={ singleCollection0 }/>
                     <CollectionWrapper class="promo" socialTag={ socialTag } nft={ nftImages1 }
                                        singleCollection={ singleCollection1 }/>
-                    <PromoSection subtitle="Join the millions of creators, collectors, and curators who are on this journey with you.">
+                    <PromoSection
+                        subtitle="Join the millions of creators, collectors, and curators who are on this journey with you.">
                         Be a Creative <span className="promo-section__title--bold">Creator</span>
                     </PromoSection>
+                    <PromoBoxes boxes={ promoBoxes }/>
                 </Container>
             </main>
         </>
