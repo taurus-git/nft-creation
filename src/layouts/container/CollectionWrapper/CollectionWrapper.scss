@@ -53,6 +53,12 @@
     text-align: center;
   }
 
+  &_hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &--title {
     font-size: 34px;
     color: inherit;
@@ -67,4 +73,60 @@
     font-weight: 400;
     margin-bottom: 25px;
   }
+}
+
+.promo .collection__wrapper {
+  margin: 0 20px 0 40px;
+
+  &_content {
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+
+    & div {
+      margin-right: 24px;
+    }
+  }
+
+  &_collection--info {
+    order: -1;
+    flex-basis: 27%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    margin: 0 0 0 30px;
+
+
+    & .social-tag.hash {
+      margin-top: 91px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &_card {
+    flex-basis: 21%;
+  }
+
+  &_hero {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+
+    & .hero-image {
+      flex-basis: 131px;
+      margin-right: 27px;
+    }
+  }
+
+  &_hero--text {
+    flex: 1 1 0px;
+  }
+
+  &--title {
+    letter-spacing: normal;
+  }
+
 }

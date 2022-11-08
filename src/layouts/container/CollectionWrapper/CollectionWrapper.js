@@ -7,10 +7,10 @@ import NftCard from "../../../components/NftCard/NftCard";
 import NftInfo from "../../../components/NftCard/NftInfo";
 
 const CollectionWrapper = ( props ) => {
-    const className = `collection__wrapper${ props.class || "" }`;
+    const className = `${ props.class || "" } collection__wrapper`;
 
     return (
-        <div className={ className }>
+        <section className={ className }>
             <ResponsiveImage collection={ props.singleCollection } class={ `${ className }--bg-image` }/>
             <div className={ `${ className }_content` }>
                 <div className={ `${ className }_card` }>
@@ -20,10 +20,14 @@ const CollectionWrapper = ( props ) => {
                              priceTitle="Buy Now" priceValue="1.00 ETH"></NftInfo>
                 </div>
                 <div className={ `${ className }_collection--info` }>
-                    <SocialTag icon="#hash" class="social-tag--hash">{ props.socialTag }</SocialTag>
-                    <HeroImage collection={ props.singleCollection }/>
-                    <Title class={ `${ className }--title` }>{ props.singleCollection.name }</Title>
-                    <span className={ `${ className }--nfts-counter` }>4 NFTs</span>
+                    <SocialTag icon="#hash" class="social-tag hash">{ props.socialTag }</SocialTag>
+                    <div className={`${ className }_hero`}>
+                        <HeroImage collection={ props.singleCollection }/>
+                        <div className={`${ className }_hero--text`}>
+                            <Title class={ `${ className }--title` }>{ props.singleCollection.name }</Title>
+                            <span className={ `${ className }--nfts-counter` }>4 NFTs</span>
+                        </div>
+                    </div>
                     <SocialTag class="social-tag">{ "@" + props.singleCollection.slug }</SocialTag>
                 </div>
                 <div className={ `${ className }_card` }>
@@ -32,8 +36,14 @@ const CollectionWrapper = ( props ) => {
                              authorImg={ props.singleCollection.banner_image_url }
                              priceTitle="Buy Now" priceValue="1.00 ETH"></NftInfo>
                 </div>
+                {props.nft[2] && <div className={ `${ className }_card` }>
+                    <NftCard class="nft--large" key={ props.nft[2].id } image={ props.nft[2] }/>
+                    <NftInfo authorName={ props.singleCollection.slug }
+                             authorImg={ props.singleCollection.banner_image_url }
+                             priceTitle="Buy Now" priceValue="1.00 ETH"></NftInfo>
+                </div>}
             </div>
-        </div>
+        </section>
     );
 };
 

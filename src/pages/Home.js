@@ -12,7 +12,8 @@ import { getSingleCollection } from "../services/apis/nftImages";
 
 const Home = () => {
     const [collections, setCollections] = useState( [] );
-    const [singleCollection, setSingleCollection] = useState( [] );
+    const [singleCollection0, setSingleCollection0] = useState( [] );
+    const [singleCollection1, setSingleCollection1] = useState( [] );
     const [socialTag, setSocialTag] = useState( [] );
 
     const [nftImages0, setNftImages0] = useState( null );
@@ -28,30 +29,30 @@ const Home = () => {
             } );
 
             setCollections( collections );
-            setSingleCollection( collections[getRandomInt( collections.length )] );
+            setSingleCollection0( collections[getRandomInt( collections.length )] );
+            setSingleCollection1( collections[getRandomInt( collections.length )] );
         };
         loadData();
-
-        const per_page = 2;
-
-        const getNftImages = async term => {
-            const images0 = await getSingleCollection( term[0], per_page );
-            const images1 = await getSingleCollection( term[1], per_page );
-            const nftImages0 = images0.data.results;
-            const nftImages1 = images1.data.results;
-            setNftImages0( nftImages0 );
-            setNftImages1( nftImages1 );
-        }
-
-        getNftImages( ["Arts", "Sports"] );
-
     }, [] );
 
     useEffect( () => {
-        if ( !singleCollection.slug ) return;
-        setSocialTag( singleCollection.slug.toUpperCase() );
-    }, [singleCollection.slug] );
+        const getNftImages = async term => {
+            const images0 = await getSingleCollection( term[0], 2 );
+            const images1 = await getSingleCollection( term[1] );
+            setNftImages0( images0.data.results );
+            setNftImages1( images1.data.results );
+        }
 
+        getNftImages( ["Arts", "Virtual Worlds"] );
+    }, [] );
+
+    useEffect( () => {
+        if ( !singleCollection0.slug ) return;
+        if ( !singleCollection1.slug ) return;
+
+        setSocialTag( singleCollection0.slug.toUpperCase() );
+        setSocialTag( singleCollection1.slug.toUpperCase() );
+    }, [singleCollection0.slug, singleCollection1.slug] );
 
     if ( !nftImages0 ) return null;
     if ( !nftImages1 ) return null;
@@ -77,7 +78,9 @@ const Home = () => {
                         </div>
                     </Section>
                     <CollectionWrapper socialTag={ socialTag } nft={ nftImages0 }
-                                       singleCollection={ singleCollection }/>
+                                       singleCollection={ singleCollection0 }/>
+                    <CollectionWrapper class="promo" socialTag={ socialTag } nft={ nftImages1 }
+                                       singleCollection={ singleCollection1 }/>
                 </Container>
             </main>
         </>
