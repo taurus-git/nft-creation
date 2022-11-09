@@ -11,6 +11,7 @@ import { getRandomInt } from "../services/Helpers/helpers";
 import { getSingleCollection } from "../services/apis/nftImages";
 import PromoSection from "../components/PromoSection/PromoSection";
 import PromoBoxes from "../components/PromoBoxes/PromoBoxes";
+import Footer from "../layouts/footer/Footer"
 
 const Home = () => {
     const [collections, setCollections] = useState( [] );
@@ -105,6 +106,7 @@ const Home = () => {
                     <PromoBoxes boxes={ promoBoxes }/>
                 </Container>
             </main>
+            <Footer/>
         </>
     );
 };

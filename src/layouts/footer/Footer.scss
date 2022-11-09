@@ -1,0 +1,42 @@
+.footer-main {
+  background-color: #000000;
+  color: #FFFFFF;
+
+  &__policy-wrapper {
+
+  }
+
+  &__logo {
+    width: 100px;
+    height: 100px;
+
+    &--icon {
+      width: 100px;
+      height: 100px;
+      fill: #ffffff;
+    }
+  }
+
+  &__policy {
+
+    &--menu {
+
+    }
+  }
+
+
+  &__menu-wrapper {
+
+    &--menu {
+
+    }
+
+    &--legend {
+
+    }
+
+    &--list {
+
+    }
+  }
+}
