@@ -53,7 +53,7 @@ const Footer = () => {
             "link": "https://www.google.com/"
         },
         {
-            "title": "Twitter",
+            "title": "Instagram",
             "link": "https://mail.google.com/mail/u/0/?ogbl#inbox"
         },
         {
