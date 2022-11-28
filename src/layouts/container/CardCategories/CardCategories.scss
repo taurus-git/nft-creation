@@ -5,3 +5,10 @@
   padding: 0 35px;
   margin-bottom: 111px;
 }
+
+@media screen and (max-width: 992px) {
+  .card-categories {
+    padding: var(--border-radius);
+    margin-bottom: 50px;
+  }
+}

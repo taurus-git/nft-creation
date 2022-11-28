@@ -2,6 +2,10 @@
   position: relative;
   display: inline-block;
 
+  &.closed {
+    display: none;
+  }
+
   &.btn-menu{
     position: absolute;
     display: block;

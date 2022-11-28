@@ -24,3 +24,10 @@
     font-size: 21px;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .single-card-category {
+    width: 195px;
+    margin: var(--border-radius);
+  }
+}

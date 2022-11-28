@@ -65,3 +65,14 @@
     align-items: flex-end;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .footer-main {
+    min-height: auto;
+
+    & .container {
+      padding: var(--border-radius);
+      min-height: auto;
+    }
+  }
+}

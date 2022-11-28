@@ -36,3 +36,15 @@
     padding: 0;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .promo-boxes {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 50px;
+
+    &__box {
+      flex: 0 0 auto;
+    }
+  }
+}

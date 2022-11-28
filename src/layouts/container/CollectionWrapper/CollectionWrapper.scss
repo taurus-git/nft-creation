@@ -107,7 +107,6 @@
 
   &_card {
     flex-basis: 21%;
-
   }
 
   &_hero {
@@ -129,4 +128,38 @@
     letter-spacing: normal;
   }
 
+}
+
+@media screen and (max-width: 992px) {
+  .collection__wrapper_content {
+    width: 95%;
+    left: 2.5%;
+  }
+
+  .promo.collection__wrapper {
+    height: auto;
+    margin-bottom: 50px;
+
+    &--bg-image {
+      position: absolute;
+    }
+
+    &_content {
+      position: relative;
+      flex-wrap: wrap;
+      padding: var(--border-radius);
+    }
+
+    &_collection--info, &_card {
+      margin-bottom: var(--border-radius);
+    }
+
+    &_collection--info {
+      flex-basis: 50%;
+    }
+
+    &_card {
+      flex-basis: 30%;
+    }
+  }
 }

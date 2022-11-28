@@ -37,11 +37,6 @@
 
   }
 
-  &--large {
-
-  }
-
-
   &-info {
     bottom: 0;
     height: 85px;
@@ -100,4 +95,12 @@
     }
   }
 
+}
+
+@media screen and (max-width: 992px) {
+  .nft-info {
+    flex-direction: column;
+    padding: 5px var(--border-radius);
+    align-items: flex-start;
+  }
 }
